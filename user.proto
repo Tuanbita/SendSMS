@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message SendMessage {
+    string toNumber = 1;
+    string content = 2;
+}
+service SendSMS {
+    rpc Send(stream SendMessage) returns (stream SendMessage) {}
+}
